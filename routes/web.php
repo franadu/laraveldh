@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('register','UserController@register');
 
 Route::get('login','UserController@login');
+
+Route::get('preguntas-frecuentes', function(){
+  return view('principal.preguntas');
+});

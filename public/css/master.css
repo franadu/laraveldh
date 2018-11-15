@@ -335,9 +335,11 @@ header{
  /* CAJA DE RESPUESTAS */
 .answers {
 	padding: 20px;
+	margin-bottom: 10px;
 }
 .answers h2{
 	margin-bottom: 15px;
+	font-size: 1.8em;
 }
 
 .answers article{
