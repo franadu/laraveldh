@@ -22,7 +22,7 @@ class Tablas extends Migration
         $table->string('image',100)->nullable();
         $table->string('mail',50)->unique();
         $table->string('phone',10)->nullable();
-        $table->softDeletes('isset')->nullable()->default(null);
+        $table->softDeletes('deleted_at')->nullable()->default(null);
         $table->tinyInteger('terms')->default(1);
         $table->tinyInteger('is_admin')->default(0);
         $table->string('password',100);
@@ -34,7 +34,7 @@ class Tablas extends Migration
         $table->string('name',50)->unique();
         $table->string('image',100)->nullable();
         $table->text('description')->nullable()->default(null);
-        $table->softDeletes('isset')->nullable()->default(null);
+        $table->softDeletes('delete_at')->nullable()->default(null);
         $table->string('brand', 30)->nullable();
         $table->float('price', 9, 2);
       });
@@ -43,14 +43,14 @@ class Tablas extends Migration
         $table->tinyIncrements('id');
         $table->timestamps();
         $table->string('name',50)->unique();
-        $table->softDeletes('isset')->nullable()->default(null);
+        $table->softDeletes('deleted_at')->nullable()->default(null);
       });
 
         Schema::create('carts', function (Blueprint $table){
           $table->Increments('id');
           $table->timestamps();
           $table->float('total', 10, 2);
-          $table->softDeletes('isset')->nullable()->default(null);
+          $table->softDeletes('deleted_at')->nullable()->default(null);
       });
 
       Schema::create('user_cart', function (Blueprint $table){
@@ -58,7 +58,7 @@ class Tablas extends Migration
         $table->timestamps();
         $table->smallInteger('id_user')->unsigned();
         $table->Integer('cart_id')->unsigned();
-        $table->softDeletes('isset')->nullable()->default(null);
+        $table->softDeletes('deleted_at')->nullable()->default(null);
          $table->foreign('id_user')->references('id')->on('users');
          $table->foreign('cart_id')->references('id')->on('carts');
        });
@@ -68,7 +68,7 @@ class Tablas extends Migration
          $table->timestamps();
          $table->smallInteger('id_product')->unsigned();
          $table->Integer('cart_id')->unsigned();
-         $table->softDeletes('isset')->nullable()->default(null);
+         $table->softDeletes('deleted_at')->nullable()->default(null);
           $table->foreign('id_product')->references('id')->on('products');
           $table->foreign('cart_id')->references('id')->on('carts');
      });
@@ -78,7 +78,7 @@ class Tablas extends Migration
          $table->timestamps();
          $table->smallInteger('id_product')->unsigned();
          $table->tinyInteger('category_id')->unsigned();
-         $table->softDeletes('isset')->nullable()->default(null);
+         $table->softDeletes('deleted_at')->nullable()->default(null);
           $table->foreign('id_product')->references('id')->on('products');
           $table->foreign('category_id')->references('id')->on('categories');
        });
