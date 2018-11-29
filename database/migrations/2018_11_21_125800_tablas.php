@@ -39,6 +39,14 @@ class Tablas extends Migration
         $table->float('price', 9, 2);
       });
 
+      Schema::create('banner', function(Blueprint $table){
+        $table->smallIncrements('id');
+        $table->timestamps();
+        $table->softDeletes('delete_at')->nullable()->default(null);
+        $table->smallInteger('product_id')->unsigned();
+        $table->foreign('product_id')->references('id')->on('products');
+      });
+
       Schema::create('categories', function (Blueprint $table){
         $table->tinyIncrements('id');
         $table->timestamps();
@@ -49,6 +57,7 @@ class Tablas extends Migration
         Schema::create('carts', function (Blueprint $table){
           $table->Increments('id');
           $table->timestamps();
+          $table->tinyInteger('purchased');
           $table->float('total', 10, 2);
           $table->softDeletes('deleted_at')->nullable()->default(null);
       });
@@ -56,30 +65,31 @@ class Tablas extends Migration
       Schema::create('user_cart', function (Blueprint $table){
         $table->Increments('id');
         $table->timestamps();
-        $table->smallInteger('id_user')->unsigned();
+        $table->smallInteger('user_id')->unsigned();
         $table->Integer('cart_id')->unsigned();
         $table->softDeletes('deleted_at')->nullable()->default(null);
-         $table->foreign('id_user')->references('id')->on('users');
+         $table->foreign('user_id')->references('id')->on('users');
          $table->foreign('cart_id')->references('id')->on('carts');
        });
 
        Schema::create('cart_product', function (Blueprint $table){
          $table->Increments('id');
          $table->timestamps();
-         $table->smallInteger('id_product')->unsigned();
+         $table->smallInteger('product_id')->unsigned();
          $table->Integer('cart_id')->unsigned();
+         $table->unsignedDecimal('precio',10,2)->unsigned();
          $table->softDeletes('deleted_at')->nullable()->default(null);
-          $table->foreign('id_product')->references('id')->on('products');
+          $table->foreign('product_id')->references('id')->on('products');
           $table->foreign('cart_id')->references('id')->on('carts');
      });
 
        Schema::create('category_product', function (Blueprint $table){
          $table->Increments('id');
          $table->timestamps();
-         $table->smallInteger('id_product')->unsigned();
+         $table->smallInteger('product_id')->unsigned();
          $table->tinyInteger('category_id')->unsigned();
          $table->softDeletes('deleted_at')->nullable()->default(null);
-          $table->foreign('id_product')->references('id')->on('products');
+          $table->foreign('product_id')->references('id')->on('products');
           $table->foreign('category_id')->references('id')->on('categories');
        });
     }
@@ -99,6 +109,7 @@ class Tablas extends Migration
         Schema::dropIfExists('products');
         Schema::dropIfExists('categories');
         Schema::dropIfExists('carts');
+        Schema::dropIfExists('banner');
 
     }
 }
