@@ -1,6 +1,8 @@
 @extends('principal/app')
 
 @section('main')
+
+
 	<main>
 		<div	 class="container_home">
 			<div class="containerHomeProducts">
@@ -11,6 +13,16 @@
 					<div class="containerHomeProducts">
 
 						<section class="home_products">
+							<!-- blade para ingresar los articulos de home-->
+							@foreach ($products as $product)
+								<article class="home_article">
+									<img src="{{$product->image}}" alt="">
+									<div class="home_product_inside">
+			              <h3>${{$product->price}}</h3>
+			              <h4>{{$product->description}}</h4>
+			            </div>
+								</article>
+							@endforeach
 
 							<article class="home_article">
 								<img src="images/placaVideo/msi-radeon-rx-580-armor8gb.webp" alt="">
