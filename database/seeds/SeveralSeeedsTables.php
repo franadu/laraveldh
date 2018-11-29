@@ -29,7 +29,7 @@ class SeveralSeeedsTables extends Seeder
 
       $array[]=['procesador ryzen 5 bonus',10849,'notebook gadnic 15,6','ryzen','/images/procesadores/ryzen52600X.jpg'];//6
 
-      $array[]=['procesador intel i5 nuevo',12638,'notebook hp 240','intel','/images/procesadores/Corei58600.jpg'];//7
+      $array[]=['procesador intel i5 nuevo',12638,'notebook hp 240','intel','/images/procesadores/Corei58600K.jpg'];//7
 
       $array[]=['procesador ryzen 7 bonus',30000,'notebook asus vivobook','ryzen','/images/procesadores/ryzen72700.jpg'];//8
 
@@ -41,23 +41,23 @@ class SeveralSeeedsTables extends Seeder
 
       $array[]=['procesador ryzen threadripper',30000,'notebook asus vivobook','ryzen','/images/procesadores/ryzenthreadripper1950X.jpg'];//12
 
-      $array[]=["laptop siragon",30.000,"notebook negra 16 pulgadas", "siragon","/images/prueba_laptop.jpg"];//13
+      $array[]=["laptop siragon",30000,"notebook negra 16 pulgadas", "siragon","/images/prueba_laptop.jpg"];//13
 
-      $array[]=["notebook gadnic 15,6",10.849,"notebook blanca 15 pulgadas", "gadnic",'/images/notebook2.webp'];//14
+      $array[]=["notebook gadnic 15,6",10849,"notebook blanca 15 pulgadas", "gadnic",'/images/notebook2.webp'];//14
 
-      $array[]=["notebook hp 240",12.638,"notebook negra hp 18 pulgadas","intel",'/images/notebook3.webp'];//15
+      $array[]=["notebook hp 240",12638,"notebook negra hp 18 pulgadas","intel",'/images/notebook3.webp'];//15
 
-      $array[]=['notebook asus vivobook',10.999,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp'];//16
+      $array[]=['notebook asus vivobook',10999,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp'];//16
 
-      $array[]=["laptop siragon nueva",30.000,"notebook negra 16 pulgadas", "siragon",'/images/prueba_laptop.jpg'];//17
+      $array[]=["laptop siragon nueva",30000,"notebook negra 16 pulgadas", "siragon",'/images/prueba_laptop.jpg'];//17
 
-      $array[]=["notebook gadnic 15,6 descuentos",10.849,"notebook blanca 15 pulgadas","gadnic",'/images/notebook2.webp'];//18
+      $array[]=["notebook gadnic 15,6 descuentos",10849,"notebook blanca 15 pulgadas","gadnic",'/images/notebook2.webp'];//18
 
-      $array[]=["notebook hp 240 nueva",12.638,"notebook negra hp 18 pulgadas","intel",'/images/notebook3.webp'];//19
+      $array[]=["notebook hp 240 nueva",12638,"notebook negra hp 18 pulgadas","intel",'/images/notebook3.webp'];//19
 
-      $array[]=['notebook asus vivobook bonificada',10.999,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp'];//20
+      $array[]=['notebook asus vivobook bonificada',10999,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp'];//20
 
-      $array[]=['notebook asus vivobook descuento',10.000,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp']; //21
+      $array[]=['notebook asus vivobook descuento',10000,"notebook asus pantalla ultra fina 15 pulgadas","asus",'/images/notebook4.webp']; //21
 
       $array[]=['Z370 Aorus 7',100000,"ATXCPU form Factor","Intel",'/images/Placas Madre/Z370Aorus.png']; //22
 
@@ -86,7 +86,7 @@ class SeveralSeeedsTables extends Seeder
       $array=null;
 
       for ($i=1; $i<=30;$i++){
-        if ($i<12){
+        if ($i<=12){
           DB::table('category_product')->insert(["category_id"=>1,"product_id"=>$i]);
         } else {
           if ($i<22) {
