@@ -9,8 +9,9 @@ class CategoryController extends Controller
 {
   public function show($request)
 	{
+
 		$category = \App\Category::where('name',$request)->get();
-    $products=$category[0]->products;
+    if ($category=='[]'){ $products="";} else {$products=$category[0]->products;}
 		return view("/principal/category",compact("category","products"));
 	}
 }

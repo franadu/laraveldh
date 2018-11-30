@@ -9,11 +9,13 @@ class UserController extends Controller
 {
   public static function register()
 	{
-		return view('principal.registrarse');
+    $var="Registrase";
+		return view('principal.registrarse',['var'=>$var]);
 	}
 
 	public static function login()
 	{
-		return view('principal.login');
+    $var="Login";
+		return view('principal.login',['var'=>$var]);
 	}
 }

@@ -20,7 +20,7 @@ class Tablas extends Migration
         $table->string('last_name',30);
         $table->string('username',30)->unique();
         $table->string('image',100)->nullable();
-        $table->string('mail',50)->unique();
+        $table->string('email',50)->unique();
         $table->string('phone',10)->nullable();
         $table->softDeletes('deleted_at')->nullable()->default(null);
         $table->tinyInteger('terms')->default(1);
