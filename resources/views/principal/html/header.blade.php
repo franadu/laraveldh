@@ -1,7 +1,7 @@
 <header class="cabezera">
   <!-- LOGO --> <!--Agrego el anclaje para que lleve a home-->
   <div class="logo">
-    <a href="home"><img src="images/Android_O_Preview_Logo.png" alt=""></a>
+    <a href="/home"><img src="images/Android_O_Preview_Logo.png" alt=""></a>
     <a><i class="fas fa-bars"></i></a>
   </div>
   <!-- MENU DE NAVEGACIO -->

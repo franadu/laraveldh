@@ -13,6 +13,8 @@
 
 Route::get('','HomeController@index');
 
+Route::get('home','HomeController@index');
+
 Route::get('register','UserController@register');
 
 Route::get('login','UserController@login');
@@ -20,3 +22,7 @@ Route::get('login','UserController@login');
 Route::get('preguntas-frecuentes', function(){
   return view('principal.preguntas');
 });
+
+Route::get('{name}','CategoryController@show');
+
+Route::get('{name}/{id}','PurchaseController@show');
