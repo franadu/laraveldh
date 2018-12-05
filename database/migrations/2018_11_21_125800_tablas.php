@@ -25,7 +25,8 @@ class Tablas extends Migration
         $table->softDeletes('deleted_at')->nullable()->default(null);
         $table->tinyInteger('terms')->default(1);
         $table->tinyInteger('is_admin')->default(0);
-        $table->string('password',100);
+        $table->string('password',255);
+        $table->string('remember_token',100);
       });
 
       Schema::create('products', function (Blueprint $table){

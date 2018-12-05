@@ -1,4 +1,4 @@
-@extends('/principal/app')
+@extends('auth/principal/app')
 
 @section('main')
 	<main>
@@ -34,7 +34,7 @@
 
 
 		<!-- .......CATEGORIAS........ -->
-		@include ('principal/html/categorias')
+		@include ('auth/principal/html/categorias')
 		</div>
 	</main>
 @endsection

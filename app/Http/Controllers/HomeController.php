@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Product;
-use \App\Category;
 
 class HomeController extends Controller
 {
-	public static function index()
-	{
-		$products=Product::all();
-		$categories=Category::paginate(10);
-		return view('principal.home',compact('products','categories'));
-	}
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('principal.home');
+    }
 }
