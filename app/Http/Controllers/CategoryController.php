@@ -13,7 +13,7 @@ class CategoryController extends Controller
 
 		$category = \App\Category::where('name',$request)->get();
     if ($category=='[]'){ $products="";} else {$products=$category[0]->products;}
-		return view("auth/principal/category",compact("category","products"));
+		return view("/principal/category",compact("category","products"));
 	}
 
   public static function apiIndex()
