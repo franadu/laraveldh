@@ -2,6 +2,12 @@
 
 @section('main')
 	<main>
+		<div class="">
+			@foreach ($banners as $banner)
+				{{$banner->products->name}}
+
+			@endforeach
+		</div>
 		<div	 class="container_home">
 			<div class="containerHomeProducts">
 			@if ($category!='[]')
