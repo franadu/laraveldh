@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Http\Resources\CategoryCollection;
 
 class CategoryController extends Controller
 {
@@ -14,4 +15,17 @@ class CategoryController extends Controller
     if ($category=='[]'){ $products="";} else {$products=$category[0]->products;}
 		return view("auth/principal/category",compact("category","products"));
 	}
+
+  public static function apiIndex()
+  {
+    return new CategoryCollection(Category::all());
+  }
+  public static function apiCategoryProduct()
+  {
+    $Categories= Category::all();
+    foreach ($Categories as $category) {
+      $prodcat[$category->name]=$category->products;
+    }
+    return new CategoryCollection($Categories);
+  }
 }

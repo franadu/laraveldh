@@ -1,5 +1,6 @@
 <?php
-
+ use App\Product;
+ use App\Http\Resources\ProductsCollection;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +11,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('api/categoryproduct','CategoryController@apiCategoryProduct');
+
+Route::get('/api/products','ProductController@apiIndex');
+
+Route::get('/api/categories','CategoryController@apiIndex');
 
 Route::get('','HomeController@index');
 
