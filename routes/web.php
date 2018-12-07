@@ -29,8 +29,5 @@ Route::get('preguntas-frecuentes', function(){
 Route::get('{name}','CategoryController@show');
 
 Route::get('{name}/{id}','PurchaseController@show');
+
 Route::get('/', 'IndexController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
