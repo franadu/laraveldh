@@ -17,8 +17,6 @@ Route::get('/api/products','ProductController@apiIndex');
 
 Route::get('/api/categories','CategoryController@apiIndex');
 
-Route::get('','HomeController@index');
-
 Route::get('home','HomeController@index');
 
 Route::get('register','UserController@register');
@@ -33,8 +31,8 @@ Route::get('{name}','CategoryController@show');
 
 Route::get('{name}/{id}','PurchaseController@show');
 
-Auth::routes();
 
-Route::get('/home', function(){
+
+Route::get('/', function(){
 	return view('principal.index');
 });
