@@ -1,12 +1,12 @@
-@extends('auth/principal/app')
+@extends('principal/app')
 
 @section('main')
 	<main>
 		<div class="">
-			@foreach ($banners as $banner)
+			{{-- @foreach ($banners as $banner)
 				{{$banner->products->name}}
 
-			@endforeach
+			@endforeach --}}
 		</div>
 		<div	 class="container_home">
 			<div class="containerHomeProducts">
@@ -40,7 +40,7 @@
 
 
 		<!-- .......CATEGORIAS........ -->
-		@include ('auth/principal/html/categorias')
+		@include ('/principal/html/categorias')
 		</div>
 	</main>
 @endsection
