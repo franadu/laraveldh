@@ -11,16 +11,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* APIs */
 Route::get('api/categoryproduct','CategoryController@apiCategoryProduct');
-
 Route::get('/api/products','ProductController@apiIndex');
-
 Route::get('/api/categories','CategoryController@apiIndex');
 
+
 Route::get('home','HomeController@index');
-
 Route::get('register','UserController@register');
-
 Route::get('login','UserController@login');
 
 Route::get('preguntas-frecuentes', function(){
