@@ -16,7 +16,7 @@ $precioFinal = 0;
         @include('principal/blocks/menu')
 
 
-        <div class="banner"> <img src="sources/img/Intel-Core-X-i5-i7-i9.jpg"></div>
+        <div class="banner"> <img src="{{$banner->url}}"></div>
         <div class = "content">
 
             <!-- ASIDE MENU -->
