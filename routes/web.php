@@ -20,8 +20,6 @@ Route::get('/api/categories','CategoryController@apiIndex');
 Route::get('register','UserController@register');
 Route::get('login','UserController@login');
 
-Auth::routes(); //Manejador de rutas de Auth::
-
 Route::get('preguntas-frecuentes', function(){
   return view('principal.preguntas');
 });
@@ -31,3 +29,5 @@ Route::get('{name}','CategoryController@show');
 Route::get('{name}/{id}','PurchaseController@show');
 
 Route::get('/', 'IndexController@index');
+
+Auth::routes();
