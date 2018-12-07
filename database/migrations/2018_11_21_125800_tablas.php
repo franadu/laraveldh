@@ -15,34 +15,36 @@ class Tablas extends Migration
     {
       Schema::create('users', function (Blueprint $table){
         $table->smallIncrements('id');
-        $table->timestamps();
         $table->string('name',30);
         $table->string('last_name',30);
         $table->string('username',30)->unique();
+        $table->string('password',255);
+        $table->string('remember_token',100);
         $table->string('image',100)->nullable();
         $table->string('email',50)->unique();
         $table->string('phone',10)->nullable();
-        $table->softDeletes('deleted_at')->nullable()->default(null);
-        $table->tinyInteger('terms')->default(1);
         $table->tinyInteger('is_admin')->default(0);
-        $table->string('password',255);
-        $table->string('remember_token',100);
+        $table->tinyInteger('terms')->default(1);
+        $table->timestamps();
+        $table->softDeletes('deleted_at')->nullable()->default(null);
       });
 
       Schema::create('products', function (Blueprint $table){
         $table->smallIncrements('id');
-        $table->timestamps();
         $table->string('name',50)->unique();
-        $table->string('image',100)->nullable();
         $table->text('description')->nullable()->default(null);
-        $table->softDeletes('delete_at')->nullable()->default(null);
+        $table->string('image',100)->nullable();
         $table->string('brand', 30)->nullable();
         $table->float('price', 9, 2);
+        $table->timestamps();
+        $table->softDeletes('delete_at')->nullable()->default(null);
       });
 
-      Schema::create('banner', function(Blueprint $table){
+      Schema::create('banners', function(Blueprint $table){
         $table->smallIncrements('id');
         $table->timestamps();
+        $table->tinyInteger('discount')->default(0);
+        $table->float('new_price',10,2)->default(0);
         $table->softDeletes('delete_at')->nullable()->default(null);
         $table->smallInteger('product_id')->unsigned();
         $table->foreign('product_id')->references('id')->on('products');
