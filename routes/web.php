@@ -35,4 +35,6 @@ Route::get('{name}/{id}','PurchaseController@show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+	return view('principal.index');
+});
