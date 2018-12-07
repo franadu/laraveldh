@@ -11,15 +11,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* APIs */
 Route::get('api/categoryproduct','CategoryController@apiCategoryProduct');
-
 Route::get('/api/products','ProductController@apiIndex');
-
 Route::get('/api/categories','CategoryController@apiIndex');
 
-Route::get('register','UserController@register');
+<<<<<<< HEAD
+=======
 
+>>>>>>> bd9e9e52b27c325ae8c8f177c6445ebeb3a55fc4
+Route::get('register','UserController@register');
 Route::get('login','UserController@login');
+
+Auth::routes(); //Manejador de rutas de Auth::
 
 Route::get('preguntas-frecuentes', function(){
   return view('principal.preguntas');
@@ -31,5 +36,15 @@ Route::get('{name}/{id}','PurchaseController@show');
 
 
 
+<<<<<<< HEAD
 Route::get('/', 'IndexController@index');
 
+=======
+Route::get('/', function(){
+	return view('principal.index');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> bd9e9e52b27c325ae8c8f177c6445ebeb3a55fc4
