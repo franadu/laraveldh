@@ -17,6 +17,9 @@ Route::get('api/categoryproduct','CategoryController@apiCategoryProduct');
 Route::get('/api/products','ProductController@apiIndex');
 Route::get('/api/categories','CategoryController@apiIndex');
 
+Route::get('/loadPC','AdminController@loadProductsCategories');
+Route::get('/catalog','AdminController@catalog');
+
 Route::get('register','UserController@register');
 Route::get('login','UserController@login');
 

@@ -81,7 +81,7 @@ class SeveralSeeedsTables extends Seeder
 
       for ($i=0; $i <count($array) ; $i++) {
         DB::table('products')->insert(["name" => $array[$i][0], "price"=> $array[$i][1], "description"=> $array[$i][2], "brand"=>$array[$i][3], "image"=> $array[$i][4]]);
-		  }
+  	  }
 
       $array=null;
 
